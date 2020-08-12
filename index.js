@@ -1,13 +1,13 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
-let votingAge = prompt("What is your age");
+// let votingAge = prompt("What is your age");
 
-if (votingAge >= 18) {
-  console.log("True");
-}
+// if (votingAge > 18) {
+//   console.log("True");
+// }
 
-//Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+// //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
 let myVar = "initial";
 let answer = "true";
@@ -38,7 +38,7 @@ function multiply(num1, num2) {
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years
-var myAge = prompt("How old are you?");
+var myAge = prompt("How old are you?")
 
 function dog(myAge) {
   var dogAge = 7 * myAge;
@@ -143,13 +143,15 @@ function play() {
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
 
-var whichConv = prompt("Kilometers or feet?");
-var unitMeasured = prompt("how much");
+var whichConv = prompt("kilometers or feet?");
+var unitMeasured = prompt("How long is your measurement?");
 
 if (whichConv === "feet") {
-  console.log(unitMeasured * 30.48 + " CM");
+  console.log(" Your input is " + unitMeasured * 30.48 + " centimeters long.");
+} else if (whichConv === "kilometers") {
+  console.log(" Your input is " + unitMeasured / 1.60934 + " miles.");
 } else {
-  console.log(unitMeasured / 1.60934 + " Miles");
+  console.log("I have no idea what you're talking about");
 }
 
 /************************************************************** Task 6 **************************************************************/
@@ -183,7 +185,7 @@ var score = prompt("What is your score?");
 
 if (score <= 100 && score >= 90) {
   console.log("You scored an A!");
-} else if (score <= 90 && score > 79) {
+} else if (score < 90 && score > 79) {
   console.log("You scored a B");
 } else if (score < 80 && score > 69) {
   console.log("You scored a C");
@@ -199,3 +201,40 @@ if (score <= 100 && score >= 90) {
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+function play() {
+  let comp1 = prompt("Rock, Paper, or Scissors");
+  // if (comp1 === 0) {
+  //   comp1 = "rock";
+  // } else if (comp1 === 1) {
+  //   comp1 = "paper";
+  // } else {
+  //   comp1 = "scissors";
+  // }
+  var comp2 = Math.floor(Math.random() * 3);
+  if (comp2 === 0) {
+    comp2 = "rock";
+  } else if (comp2 === 1) {
+    comp2 = "paper";
+  } else {
+    comp2 = "scissors";
+  }
+  console.log("Player one rolls " + comp1 + ".");
+  console.log("Player Two rolls " + comp2 + ".");
+
+  if (comp1 === comp2) {
+    console.log("Game ends in tie.");
+  } else if (comp1 === "rock" && comp2 === "scissors") {
+    console.log("Player one wins " + comp1 + " beats " + comp2 + ".");
+  } else if (comp1 === "rock" && comp2 === "paper") {
+    console.log("Player two wins " + comp2 + " beats " + comp1 + ".");
+  } else if (comp1 === "paper" && comp2 === "rock") {
+    console.log("Player One wins " + comp1 + " beats " + comp2 + ".");
+  } else if (comp1 === "paper" && comp2 === "scissors") {
+    console.log("Player Two wins " + comp2 + " beats " + comp1 + ".");
+  } else if (comp1 === "scissors" && comp2 === "paper") {
+    console.log("Player One wins " + comp1 + " beats " + comp2 + ".");
+  } else if (comp1 === "scissors" && comp2 === "rock") {
+    console.log("Player Two wins " + comp2 + " beats " + comp1 + ".");
+  }
+}
