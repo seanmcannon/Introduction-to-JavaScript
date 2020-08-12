@@ -38,9 +38,9 @@ function multiply(num1, num2) {
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years
-var myAge = prompt("How old are you?")
 
-function dog(myAge) {
+function dog() {
+  let myAge = prompt("How old are you?");
   var dogAge = 7 * myAge;
   console.log(dogAge);
 }
